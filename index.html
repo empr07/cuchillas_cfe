@@ -1,8 +1,60 @@
-<html>
-    <head>
-        <title>CFE</title>
-    </head>
-    <body>
-        <h1>CFE</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - CFE</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <div class="form">
+                <img src="images/Logo2-CFE.png" alt="CFE Logo" class="logo">
+                <h2>Iniciar sesión</h2>
+                <input type="email" placeholder="Correo" id="login_email" />
+                <input type="password" placeholder="Contraseña" id="login_password" />
+                <button style="cursor: pointer;" onclick="login()">Iniciar sesión</button>
+                <p style="color: red;" id="login_error"></p>
+            </div>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h2>¡BIENVENIDO EMPLEADO DE CFE!</h2>
+                    <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const email = document.getElementById("login_email").value;
+            const password = document.getElementById("login_password").value;
+            fetch("https://apicfe.onrender.com/api/auth/login", {
+                method: 'POST',
+                mode: "cors",
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ correo: email, contraseña: password }),
+            }).then(response => {
+                if (response.status !== 200) {
+                    document.getElementById('login_error').innerHTML = 'Credenciales incorrectas';
+                } else {
+                    response.json().then(data => {
+                        localStorage.setItem("token", data.token);
+                        localStorage.setItem('admin', data.admin);
+                        window.location.href = data.admin ? '/Administrador.html' : '/Inicio.html';
+                    });
+                }
+            }).catch(error => console.error(error));
+        }
+    </script>
+</body>
+
 </html>

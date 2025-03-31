@@ -1,0 +1,150 @@
+body {
+    background-color: rgb(235, 235, 235);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    z-index: 1;
+}
+
+.content {
+    margin-left: 220px;
+    z-index: 0;
+}
+
+.nav-header {
+    background-color: #2b3136;
+    height: 65px;
+}
+
+.nav-button {
+    color: #f4fff5;
+}
+
+.nav-button:hover {
+    background-color: #2C4178;
+    color: rgb(252, 252, 252)
+}
+
+.nav-button {
+    text-decoration: none;
+}
+
+.nav-button-logout {
+    color: #d9534f !important;
+}
+
+.nav-button-logout:hover {
+    background-color: #d9534f;
+    color: rgb(252, 252, 252) !important
+}
+
+.nav-button-logout {
+    text-decoration: none;
+}
+
+.click {
+    cursor: pointer;
+}
+
+.header-sidebar {
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    border-bottom: 1px #dbdbdb solid;
+    z-index: 1;
+}
+
+.mt-100{
+    margin-top: 50px;
+}
+
+
+.search {
+    cursor: pointer;
+    height: 45px;
+    width: 40px;
+    border-left: 1px #348343 solid;
+    border-top: 1px #348343 solid;
+    border-bottom: 1px #348343 solid;
+    border-right: 1px #348343 solid;
+    border-radius: 0px !important;
+}
+
+.search:disabled{
+    cursor:no-drop;
+    background-color: #157347b5 !important;
+
+}
+
+.input-search {
+    padding: 10px;
+    height: 45px;
+    border-left: 0px;
+    border-right: 1px #348343 solid;
+    border-top: 1px #348343 solid;
+    border-bottom: 1px #348343 solid;
+    border-left: 1px #348343 solid;
+
+}
+
+.input-search:focus {
+    outline: none;
+}
+
+select {
+    padding: 5px 0px 5px 10px;
+    width: 15%;
+    height: 45px;
+    border: 1px #0F4E89 solid;
+}
+
+select:focus {
+    outline: none;
+}
+
+.bg-custom {
+    background-color: #348343;
+}
+
+.size-card-info {
+    font-size: 1.5em;
+}
+
+.size-card-amount {
+    font-size: 4em;
+}
+
+.card-rounded {
+    border-radius: 10px;
+}
+
+.footer-rounded {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.size-header {
+    font-size: .9em;
+}
+
+.text-small {
+    font-size: 1em;
+}
+
+#card-body-sales {
+    height: 243px;
+    overflow-x: hidden;
+}
+
+#card-earning {
+    height: 356px;
+}
+
+.amount-earning {
+    font-size: 6em;
+}

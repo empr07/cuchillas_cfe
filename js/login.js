@@ -17,7 +17,7 @@ function login() {
         else {
             response.json().then(data => {
                 localStorage.setItem("token", data.token)
-                window.location.href = '/circuitos_cfe/panel.html'
+                window.location.href = '/cuchillas_cfe/panel.html'
             })
 
         }

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/images/foto\ cicuito.webp); /* Asegúrate de que la URL sea correcta */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'sans-serif', sans-serif;
+    height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina márgenes */
+}
+h1 {
+    font-weight: bold;
+    margin: 0;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 20px 0 30px;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #085D11;
+    background-color: #085D11;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 12px 60px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+    background-color: darkgreen;
+}
+
+.form {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+    z-index: 10;
+}
+
+.overlay {
+    background: linear-gradient(to right, #044813, #249408DB);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 50px;
+    box-sizing: border-box;
+    border-radius: 0 10px 10px 0;
+}
+
+.form-container {
+    position: absolute;
+    width: 50%;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 5;
+    padding: 20px;
+}
+/* Cuando el panel activo se mueve */
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.logo {
+    width: 200px; /* Ajusta el tamaño del logo */
+    margin-bottom: 10px; /* Espaciado debajo del logo */
+}
